@@ -1,0 +1,38 @@
+<ion-view title="Transcations">
+  <ion-nav-buttons side="right">
+        <button class="right button button-icon icon ion-plus custom-icon" ng-click="insert()"></button>
+    </ion-nav-buttons>
+
+    <ion-content>
+      <input type="hidden" ng-model="datehidden">
+      <div class="list">
+         <span ng-if="trans.length != 0">
+      <a class="item item-icon-left" ng-repeat="tran in trans" href="#/app/trans/{{tran.id}}">
+          <i class="icon ion-chevron-right"></i>
+         {{tran.type}}[{{tran.category}}]
+          <span class="item-note">
+          {{dbcurenc}} {{tran.amount}}
+          </span>
+        </a>
+      </span>
+         <span ng-if="trans.length ==0">
+
+                 <div class="card">
+       <h4 class="title assertive">
+        There are no transaction this month.
+      </h4>
+     </div>
+
+
+         </span>
+
+
+
+</div>
+    </ion-content>
+    <div class="bar bar-footer bar-balanced">
+      <button class="left button button-icon icon ion-chevron-left" ng-click="prevMonth()"></button>
+    <h2 class="title">{{month}}</h2>
+      <button class="right button button-icon icon ion-chevron-right" ng-click="nextMonth()"></button>
+  </div>
+</ion-view>

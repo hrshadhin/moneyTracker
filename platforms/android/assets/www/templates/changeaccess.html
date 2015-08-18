@@ -1,0 +1,39 @@
+<ion-view title="Change Access Info">
+
+    <ion-content>
+
+
+
+
+    <form name="signinForm" novalidate="" ng-submit="signIn(signinForm)">
+      <div class="list">
+        <label class="item item-input" ng-class="{ 'has-error' : signinForm.email.$invalid}">
+          <span class="input-label">Username</span>
+          <input type="email" class="deap" name="username" ng-model="user.username"
+          required placeholder="admin@example.com">
+        </label>
+
+                <div class="form-errors" ng-messages="signinForm.username.$error" ng-messages-include="templates/messages.html">
+
+                </div>
+
+                <label class="item item-input"
+                       ng-class="{ 'has-error-lr' : signinForm.password.$invalid  && signinForm.$submitted, 'valid-lr' : signinForm.password.$valid  && signinForm.$submitted}">
+                  <span class="input-label">Password</span>
+                  <input class="deap" type="password"
+                         name="password"
+                         ng-model="user.password"
+                         ng-minlength="6"
+                         required>
+                </label>
+                <div class="form-errors"
+                     ng-show="signinForm.password.$error && signinForm.$submitted"
+                     ng-messages="signinForm.password.$error"
+                     ng-messages-include="templates/messages.html">
+                </div>
+        <label class="item">
+          <button class="button button-block button-positive icon-left ion-checkmark" type="submit">Change</button>
+        </label>
+      </div>
+      </ion-content>
+  </ion-view>

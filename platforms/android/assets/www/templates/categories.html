@@ -1,0 +1,29 @@
+<ion-view title="Categories">
+  <ion-nav-buttons side="right">
+        <button class="right button button-icon icon ion-plus custom-icon" ng-click="insert()"></button>
+    </ion-nav-buttons>
+    <ion-content>
+      <div class="list">
+          <span ng-if="categories.length!=0">
+      <a class="item item-icon-left" ng-repeat="category in categories" href="#/app/categories/{{category.id}}">
+          <i class="icon ion-chevron-right"></i>
+         {{category.category_name}}
+          <span class="item-note">
+           {{category.category_type}}
+          </span>
+        </a>
+      </span>
+      <span ng-if="categories.length ==0">
+
+              <div class="card">
+      <h4 class="title assertive">
+      Category not add yett!first add it.
+      </h4>
+      </div>
+      </span>
+
+
+</div>
+
+    </ion-content>
+</ion-view>

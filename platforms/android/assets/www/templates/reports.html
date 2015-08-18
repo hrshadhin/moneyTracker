@@ -1,0 +1,39 @@
+<ion-view title="Report">
+  <ion-nav-buttons side="right">
+        <button class="right button button-icon icon ion-clipboard custom-icon" ng-click="exportCSV()"></button>
+          <button class="right button button-icon icon ion-email custom-icon" ng-click="sendmail()"></button>
+    </ion-nav-buttons>
+    <ion-content>
+      <input type="hidden" ng-model="datehidden">
+
+      <div class="list">
+      <a class="item item-icon-left"  href="#">
+      <i class="icon ion-arrow-right-c  green"> </i> Income <span class="item-note">{{dbcurenc}} {{transt[0].income}}</span>
+        </a>
+        <a class="item item-icon-left"  href="#">
+        <i class="icon ion-arrow-left-c  red"> </i>  Expence <span class="item-note red">{{dbcurenc}} {{transt[0].expence}}</span>
+          </a>
+          <a class="item item-icon-left"  href="#">
+          <i class="icon ion-shuffle"> </i>  Balance <span class="item-note green">{{dbcurenc}} {{transt[0].balance}}</span>
+            </a>
+          </div>
+      <h6 class="title">Transactions By Category</h6>
+      <div class="list">
+      <a class="item item-icon-left" ng-repeat="tran in trans"  href="#">
+        <i class="icon ion-ios-checkmark-empty green"></i>  {{tran.category}} <span class="item-note">{{dbcurenc}} {{tran.amount}}</span>
+        </a>
+
+    </div>
+      <div class="list">
+      <span ng-if="trans.length>0">
+      <button class="button  button-positive icon-left ion-clipboard" ng-click="exportCSV()">Export Report</button>
+      <button class="button  button-positive icon-left ion-email" ng-click="sendmail()">Sendmail</button>
+     </span>
+    </div>
+    </ion-content>
+    <div class="bar bar-footer bar-balanced">
+      <button class="left button button-icon icon ion-chevron-left" ng-click="prevMonth()"></button>
+    <h2 class="title">{{month}} Transaction History</h2>
+      <button class="right button button-icon icon ion-chevron-right" ng-click="nextMonth()"></button>
+  </div>
+</ion-view>

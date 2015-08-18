@@ -1,0 +1,36 @@
+<ion-view title="Transaction Info">
+
+    <ion-content>
+        <form ng-submit="updateCat()">
+      <div class="list">
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Type:</span>
+           {{tran[0].type}}
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Category:</span>
+           {{tran[0].category}}
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Amount:</span>
+          {{dbcurenc}} {{tran[0].amount}}
+             </label>
+             <label class="item item-input item-stacked-label">
+               <span class="input-label">Date:</span>
+                {{ tran[0].date}}
+             </label>
+             <label class="item item-input item-stacked-label">
+               <span class="input-label">Note:</span>
+                {{tran[0].note}}
+             </label>
+
+</div>
+</form>
+
+    </ion-content>
+    <div class="bar bar-foo bar-footer-foo">
+      <button class="button button-foo button-full button-full-foo button-assertive icon-left icon ion-trash-a"  ng-click="deleteTrans()">
+          Delete
+        </button>
+  </div>
+</ion-view>

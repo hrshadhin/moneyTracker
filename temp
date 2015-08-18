@@ -1,0 +1,9 @@
+$scope.viewindpls = [
+{value: '1', displayName: 'Months'},
+{value: '2', displayName: 'Years'}
+];
+$scope.curency = '1';
+$scope.updatetype = function(item)
+{
+  $scope.ctype = item;
+};

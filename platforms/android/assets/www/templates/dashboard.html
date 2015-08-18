@@ -1,0 +1,67 @@
+<ion-view view-title="Money Tracker">
+
+  <ion-content>
+      <h4 class="title">OverView</h4>
+  <input type="hidden" ng-model="datehidden">
+
+
+    <div class="list">
+    <a class="item item-icon-left"  href="#">
+      <i class="icon ion-arrow-right-c  green"> </i> Income <span class="item-note">{{dbcurenc}}{{trans[0].income}}</span>
+      </a>
+      <a class="item item-icon-left"  href="#">
+      <i class="icon ion-arrow-left-c  red"> </i>  Expence <span class="item-note red">{{dbcurenc}} {{trans[0].expence}}</span>
+        </a>
+        <a class="item item-icon-left"  href="#">
+          <i class="icon ion-shuffle"> </i>   Balance <span class="item-note green">{{dbcurenc}} {{trans[0].balance}}</span>
+          </a>
+        </div>
+
+
+          <div class="item item-divider">
+            Budgets Status
+          </div>
+
+          <a class="item item-icon-left" ng-repeat="bdata in budgetsdata" href="#">
+            <span ng-if="bdata.type==1">
+              <i class="icon ion-ios-checkmark-empty green"></i>
+            {{bdata.category}}&nbsp;<i class="green">[{{bdata.bamount}}]</i>&nbsp;
+            <i class="possitive">[{{bdata.lamount}}]</i>
+              <span class="item-note">{{dbcurenc}}
+                <span ng-if="bdata.inhand<0"> <i class="red">
+               {{bdata.inhand}}
+                </i>
+                 </span>
+                 <span ng-if="bdata.inhand>=0">
+                {{bdata.inhand}}
+
+                  </span>
+              </span>
+            </span>
+            <span ng-if="bdata.type!=1">
+
+            <i class="icon ion-ios-checkmark-empty green"></i>
+          {{bdata.category}}&nbsp;<i class="green">[{{bdata.bamount}}]</i>&nbsp;
+          <i class="red">[{{bdata.lamount}}]</i>
+            <span class="item-note">{{dbcurenc}}
+              <span ng-if="bdata.inhand<0"> <i class="red">
+             {{bdata.inhand}}
+              </i>
+               </span>
+               <span ng-if="bdata.inhand>=0">
+              {{bdata.inhand}}
+
+                </span>
+            </span>
+          </span>
+          </a>
+
+
+
+  </ion-content>
+  <div class="bar bar-footer bar-balanced">
+    <button class="left button button-icon icon ion-chevron-left" ng-click="prevMonth()"></button>
+  <h2 class="title">{{month}}</h2>
+    <button class="right button button-icon icon ion-chevron-right" ng-click="nextMonth()"></button>
+</div>
+</ion-view>

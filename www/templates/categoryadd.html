@@ -1,0 +1,28 @@
+<ion-view title="Add New Category">
+
+    <ion-content>
+        <form name="cataddForm" novalidate="" ng-submit="addCat(cataddForm)">
+      <div class="list">
+
+          <label class="item item-input item-stacked-label" ng-class="{ 'has-error' : cataddForm.cname.$invalid}">
+          <span class="input-label">Name:</span>
+          <input type="text" class="deap" ng-model="catAdd.cname" name="cname" placeholder="Health" required>
+        </label>
+          <div class="form-errors" ng-messages="cataddForm.cname.$error" ng-messages-include="templates/messages.html"></div>
+        <div class="item item-input item-select">
+        <div class="input-label">
+          Type :
+        </div>
+        <select ng-model="ctype" ng-change="updatetype(ctype)" ng-options="ctype.value as ctype.displayName for ctype in types"></select>
+  </div>
+
+  <label class="item">
+    <button class="button button-block button-positive icon-left ion-ios-plus-outline" type="submit">Add</button>
+  </label>
+</div>
+
+
+</form>
+
+    </ion-content>
+</ion-view>

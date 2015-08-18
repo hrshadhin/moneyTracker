@@ -1,0 +1,52 @@
+<ion-header-bar class="bar-positive">
+
+  <h1 class="title">Money Tracker</h1>
+
+</ion-header-bar>
+<ion-view title="Money Tracker">
+
+  <ion-content>
+    <div class="padding">
+      <img class="center" src="img/logo.png">
+    </div>
+    <form name="signinForm" novalidate="" ng-submit="signIn(signinForm)">
+      <div class="list">
+        <label class="item item-input" ng-class="{ 'has-error' : signinForm.email.$invalid}">
+          <span class="input-label">Username</span>
+          <input type="email" class="deap" name="username"  ng-model="user.username"
+          required placeholder="admin@example.com">
+        </label>
+
+                <div class="form-errors" ng-messages="signinForm.username.$error" ng-messages-include="templates/messages.html">
+
+                </div>
+
+                <label class="item item-input"
+                       ng-class="{ 'has-error-lr' : signinForm.password.$invalid  && signinForm.$submitted, 'valid-lr' : signinForm.password.$valid  && signinForm.$submitted}">
+                  <span class="input-label">Password</span>
+                  <input class="deap" type="password"
+                         name="password"
+                         ng-model="user.password"
+                         ng-minlength="6"
+                         required>
+                </label>
+                <div class="form-errors"
+                     ng-show="signinForm.password.$error && signinForm.$submitted"
+                     ng-messages="signinForm.password.$error"
+                     ng-messages-include="templates/messages.html">
+                </div>
+
+          <button class="button button-block button-positive icon-right ion-log-in" type="submit">Login</button>
+
+      </div>
+    </form>
+    <div class="card danger" style="display:{{isshow}}">
+    <div class="item item-text-wrap red">
+    {{loginError}}
+    </div>
+    </div>
+  </ion-content>
+  <div class="bar bar-foo bar-footer-foo">
+  <button class="button button-foo button-full button-assertive button-full-foo icon-left ion-power myfonts" ng-click="exit()">Exit</button>
+</div>
+</ion-view>

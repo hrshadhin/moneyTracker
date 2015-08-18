@@ -1,0 +1,24 @@
+<ion-view title="Budget Info">
+
+    <ion-content>
+        <form ng-submit="updateCat()">
+      <div class="list">
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Name:</span>
+           {{budget[0].name}}
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Amount:</span>
+            {{dbcurenc}} {{budget[0].amount}}
+             </label>
+
+</div>
+</form>
+
+    </ion-content>
+    <div class="bar bar-foo bar-footer-foo">
+      <button class="button button-foo button-full button-full-foo button-assertive icon-left icon ion-trash-a"  ng-click="deleteBud()">
+          Delete
+        </button>
+  </div>
+</ion-view>

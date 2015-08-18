@@ -1,0 +1,50 @@
+<ion-view title="New Transaction">
+
+    <ion-content>
+        <form name="transForm" novalidate="" ng-submit="addtran(transForm)">
+      <div class="list">
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Date</span>
+          <ionic-datepicker idate="currentDate" disablepreviousdates="false"  disablefuturedates="false" callback="datePickerCallback" disableddates="disabledDates" title="title" mondayfirst="true">
+              <button class="button button-block button-positive"> {{ currentDate | date:'dd - MMMM - yyyy' }} </button>
+          </ionic-datepicker>
+          <input type="text" style="display:none" class="deap"  ng-model="trans.date" name="date">
+        </label>
+
+        <label class="item item-input item-select">
+          <span class="input-label">Category:</span>
+        <select ng-model="category" ng-change="updatecat(category)" ng-options="category.id as category.name for category in categories"></select>
+  </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Amount</span>
+      <input type="text" class="deap" ng-model="trans.amount" name="amount"  required ng-pattern="/^\d{0,9}(\.\d{1,9})?$/" placeholder="120.00">
+  </label>
+  <div class="form-errors" ng-messages="transForm.amount.$error" ng-messages-include="templates/messages.html">
+  </div>
+
+  <div class="form-errors" ng-messages="transForm.date.$error" ng-messages-include="templates/messages.html">
+  </div>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Note</span>
+    <textarea type="text" class="deap" ng-model="trans.note"> </textarea>
+  </label>
+  <span ng-if="categories.length!=0">
+<label class="item">
+  <button class="button button-block button-positive icon-left ion-ios-plus-outline" type="submit">Add</button>
+</label>
+</span>
+<span ng-if="categories.length ==0">
+
+        <div class="card">
+<h4 class="title assertive">
+Budgets not set for this month yer!!.
+</h4>
+</div>
+
+
+</span>
+</div>
+</form>
+
+    </ion-content>
+</ion-view>

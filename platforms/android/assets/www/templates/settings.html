@@ -1,0 +1,40 @@
+<ion-view view-title="Settings">
+  <ion-content>
+    <form ng-submit="saveSettings()">
+  <div class="list">
+  <!--  <div class="item item-input item-select">
+    <div class="input-label">
+      View In:
+    </div>
+    <select ng-model="viewin" ng-change="updateviewin(viewin)" ng-options="viewin.value as viewin.displayName for viewin in viewindpls">
+</select>
+
+  </div> -->
+  <div class="item item-input item-select">
+  <div class="input-label">
+    Curency Format:
+  </div>
+  <select ng-model="curency" ng-change="updatecurency(curency)" ng-options="curency.value as curency.displayName for curency in curencies">
+</select>
+
+</div>
+
+
+<label class="item">
+<button class="button button-block button-positive icon-left ion-checkmark" type="submit">Save</button>
+</label>
+
+
+
+</div>
+</form>
+<a class="button button-block button-positive icon-left icon ion-gear-b"  href="#/app/changeaccess">
+    Change Account Info
+      </a>
+<button class="button button-block button-positive icon-left icon ion-compose"  ng-click="reportbug()">
+    Report a problem
+  </button>
+
+
+  </ion-content>
+</ion-view>

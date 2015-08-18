@@ -1,0 +1,56 @@
+<ion-view title="Add New Budget">
+
+    <ion-content>
+        <form name="baddForm" novalidate="" ng-submit="addbudget(baddForm)">
+      <div class="list">
+          <label class="item item-input item-stacked-label">
+             <span class="input-label">For Month:</span>
+            <input type="hidden" ng-model="datehidden">
+              </label>
+        <div class="item item-input">
+
+          <button class="left button button-icon" ng-click="prevMonthfor()">
+          <i class="icon ion-chevron-left"></i>
+      </button>
+
+        <h2 class="title foo-month">{{month}}</h2>
+
+    <button class="right button button-icon" ng-click="nextMonthfor()">
+    <i class="icon ion-chevron-right"></i>
+</button>
+  </div>
+
+
+
+
+
+        <label class="item item-input item-select">
+          <span class="input-label">Category:</span>
+        <select ng-model="category" ng-change="updatecat(category)" ng-options="category.id as category.name for category in categories"></select>
+       </label>
+          <div class="form-errors" ng-messages="baddForm.name.$error" ng-messages-include="templates/messages.html"> </div>
+        <label class="item item-input item-stacked-label" ng-class="{ 'has-error' : baddForm.amount.$invalid}">
+          <span class="input-label">Amount</span>
+      <input type="text"  ng-model="budgetadd.amount" name="amount"  required ng-pattern="/^\d{0,9}(\.\d{1,9})?$/" placeholder="120.00">
+
+  </label>
+  <div class="form-errors" ng-messages="baddForm.amount.$error" ng-messages-include="templates/messages.html">
+  </div>
+    <span ng-if="categories.length!=0">
+<label class="item">
+  <button class="button button-block button-positive icon-left ion-ios-plus-outline" type="submit">Add</button>
+</label>
+</span>
+<span ng-if="categories.length ==0">
+
+        <div class="card">
+<h4 class="title assertive">
+Category not add yet!first add it.
+</h4>
+</div>
+</span>
+</div>
+</form>
+
+    </ion-content>
+</ion-view>

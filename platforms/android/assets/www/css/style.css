@@ -1,0 +1,123 @@
+/* Empty. Add your own CSS if you like */
+@font-face {
+  font-family: "HelveticaNTSTD";
+  src: url('HelveticaNeueLTStd-Ex.ttf');/* relative path from the css file */
+}
+@font-face {
+  font-family: "Play";
+  src: url('Play-Regular.ttf');/* relative path from the css file */
+}
+.red{
+  color: #FF0000 !important;
+}
+.deap
+{
+  background-color: #EEEEEE !important;
+}
+body {
+  font-family: 'Play';
+  font-size:15px;
+
+}
+h1 {
+  font-family: 'Play';
+}
+.button{
+  font-size:25px !important;
+}
+.title
+{
+
+    font-size:20px !important;
+    text-align: center;
+
+}
+.item-note {
+  float: right;
+  color: #0D6373;
+  font-size: 16px;
+}
+.myfont {
+    font-family: 'Play';
+    font-size:15px;
+    color: #005284;
+}
+.green{
+  color:green;
+}
+.custom-icon {
+  font-size: 64px;
+  color : white !important;
+}
+.bar.bar-stable {
+  border-color: #000;
+  background-color: #000;
+  background-image: linear-gradient(0deg, #000, #000 50%, transparent 50%);
+  color: #fff;
+}
+.bar.bar-stable .title {
+  color: white !important;
+}
+.bar-stable .button.button-clear {
+  border-color: transparent;
+  background: none;
+  box-shadow: none;
+  color: #fff;
+  font-size: 17px;
+}
+img.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+/** Styling for the username field **/
+label.item.has-error {
+  border-bottom: 2px solid red;
+}
+
+/** Styling for the password field when an error exists**/
+label.item.has-error-lr {
+  border-left: 2px solid red;
+  border-right: 2px solid red;
+}
+
+/** Styling for the password field when an error has been resolved**/
+label.item.valid-lr {
+  border-left: 2px solid green;
+  border-right: 2px solid green;
+}
+
+/** Styling for the error text and container **/
+.form-errors {
+  margin: 5px 0
+}
+.form-error {
+  padding: 2px 0 2px 16px;
+  color: red;
+}
+.popup-buttons .button{
+  font-size: 17px !important;
+}
+.input-label{
+  font-weight: bold;
+}
+.bar-foo{
+  padding: 0px !important;
+}
+.bar-footer-foo {
+  bottom: 0;
+   border-top-width: 0px;
+  border-bottom-width: 0;
+
+   height: 44px;
+}
+.button-full-foo {
+  margin-top: 0px !important;
+  margin-bottom: -4px !important;
+
+}
+.foo-month{
+  margin-left: 90px !important;
+  margin-right: 90px !important;
+
+}
