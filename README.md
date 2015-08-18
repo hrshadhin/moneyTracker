@@ -1,4 +1,4 @@
-# moneyTracker
+# Money Tracker
 Personal Finance manage native mobile application Using Cordova.
 
 Usage:
@@ -13,9 +13,13 @@ Follow the <a href="http://cordova.apache.org/docs/en/3.3.0/guide_platforms_andr
 Then Go to application direcotry
 
 $ cd moneyTracker
+
 $ ionic platform add android
+
 $ ionic build android
+
 $ ionic run android
+
 
 Screenshots:
 ===========
